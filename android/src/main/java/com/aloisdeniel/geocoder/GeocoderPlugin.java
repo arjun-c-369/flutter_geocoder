@@ -37,13 +37,12 @@ public class GeocoderPlugin implements FlutterPlugin {
   private Geocoder geocoder;
   MethodCallHandlerImpl methodCallHandler;
   //  @Nullable private Geocoder geocoder;
-/*
 
   public GeocoderPlugin(Context context) {
 
     this.geocoder = new Geocoder(context);
   }
-*/
+
 
   /**
    * Plugin registration.
