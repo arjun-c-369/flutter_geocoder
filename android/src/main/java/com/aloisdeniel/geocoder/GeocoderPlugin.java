@@ -18,6 +18,9 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
 
 /**
  * NotAvailableException
@@ -29,14 +32,18 @@ class NotAvailableException extends Exception {
 /**
  * GeocoderPlugin
  */
-public class GeocoderPlugin implements MethodCallHandler {
+public class GeocoderPlugin implements FlutterPlugin {
 
-  private Geocoder geocoder;
+  //private Geocoder geocoder;
+    @Nullable private MethodCallHandlerImpl methodCallHandler;
+    @Nullable private Geocoder geocoder;
+/*
 
   public GeocoderPlugin(Context context) {
 
     this.geocoder = new Geocoder(context);
   }
+*/
 
   /**
    * Plugin registration.
