@@ -34,9 +34,9 @@ public class GeocoderPlugin implements MethodCallHandler {
 
   private Geocoder geocoder;
 
-  public GeocoderPlugin(Context context) {
+  public GeocoderPlugin() {
 
-    this.geocoder = new Geocoder(context);
+    this.geocoder = new Geocoder();
   }
 
   /**
@@ -44,7 +44,7 @@ public class GeocoderPlugin implements MethodCallHandler {
    */
   public static void registerWith(Registrar registrar) {
     final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/aloisdeniel/geocoder");
-    channel.setMethodCallHandler(new GeocoderPlugin(registrar.context()));
+    channel.setMethodCallHandler(new GeocoderPlugin(registrar.activeContext()));
   }
 
   // MethodChannel.Result wrapper that responds on the platform thread.
