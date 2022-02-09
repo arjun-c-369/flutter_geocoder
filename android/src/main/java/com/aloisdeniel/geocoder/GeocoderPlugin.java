@@ -32,17 +32,14 @@ class NotAvailableException extends Exception {
 /**
  * GeocoderPlugin
  */
-public class GeocoderPlugin implements FlutterPlugin {
+public class GeocoderPlugin implements MethodCallHandler {
 
   private Geocoder geocoder;
-  MethodCallHandlerImpl methodCallHandler;
-  //  @Nullable private Geocoder geocoder;
 
   public GeocoderPlugin(Context context) {
 
     this.geocoder = new Geocoder(context);
   }
-
 
   /**
    * Plugin registration.
